@@ -1,0 +1,64 @@
+/* -- Fonts --- */
+@font-face { font-family: "Yanone";  src: url("Yanone-Kaffeesatz-regular.ttf")    format("truetype"); }
+
+#footer {
+  display: none;
+}
+
+.slide {
+  background: #fff url('fondo.jpg') no-repeat top left;
+  padding: 0 50px;
+  width: 924px;
+}
+
+.content {
+  background: none;
+  font-family: 'Yanone' !important;
+  color: rgb(83, 71, 71);
+}
+
+h1 {
+  padding: 0 50px;
+  line-height: 1.15em;
+}
+
+.content.image {
+  background: #fff;
+}
+
+.content.image p {
+  margin: 0 !important;
+  width: 1024px;
+  height: 768px;
+}
+
+.content.image img {
+  display: block;
+  margin: auto auto;
+}
+
+.content.bullets li {
+  line-height: 1.15em;
+  margin-left: 0;
+}
+
+.btn-demo {
+  font-size: 4rem;
+  font-family: 'Yanone';
+  padding: 20px;
+}
+
+.btn-demo:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.columns ul {
+  margin: 0 auto;
+  width: 70%;
+  -webkit-column-count: 2;
+}
+
+.sh_sourceCode {
+  background: #f5f4f0 ! important;
+}
