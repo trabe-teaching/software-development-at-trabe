@@ -15,11 +15,13 @@
 Trabe - logo - url - @trabe
 
 <!--
+  pic -> trabe navidad. Men at work!
+
   a qué nos dedicamos, qué hacemos para quién, tecnologías, etc.
   Java + Rails
 -->
 
-!SLIDE bullets
+!SLIDE bullets toc
 
 # Contents
 
@@ -28,10 +30,14 @@ Trabe - logo - url - @trabe
 * The many hells of Computer Science
 * The ten commandments
 
-!SLIDE
+!SLIDE section
 
-# &#8220;A good design is easy to change, rather than easy to configure&#8221;
-(someone, somewhere)
+# Ideas
+
+!SLIDE quote
+
+# A good design is easy to change, rather than easy to configure
+## someone, somewhere
 
 !SLIDE
 
@@ -70,6 +76,16 @@ Trabe - logo - url - @trabe
 
 ## KISS & DRY driven
 
+!SLIDE
+
+# SOLID leads to Design Patterns
+## (Designs patterns are SOLID)
+
+!SLIDE image
+
+<!-- Be OO my friend -->
+
+
 !SLIDE bullets
 
 # Other useful buzzwords
@@ -77,3 +93,4 @@ Trabe - logo - url - @trabe
 * YAGNI
 * CoC
 
+<!-- Ejemplo de CoC un fichero de configuracion de Struts o algo similar :D-->

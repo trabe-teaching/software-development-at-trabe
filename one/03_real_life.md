@@ -1,41 +1,47 @@
+!SLIDE section
+
+# Real life examples
+
 !SLIDE
 
 # FEDERICO
 
 <!--
-UDC-Federico
 Ejemplo de arquitectura para integrar múltiples aplicaciones
-Problema: Identidad unica, compartir información entre sistemas (1 diagrama)
+-->
+
+!SLIDE problem
+
+# Problem
+
+## Signup/signin on multiple services
+## Consolidate personal info
+
+!SLIDE solution
+
+# Solution
+
+## Orchestrate services through a Service Bus
+## Single Sign On
+
+!SLIDE image
+< arquitectura ideal >
+
+<!--
 Solución ideal:
 Federacion de autenticacion
 Bus + Adaptadores + Pull+Push + Operaciones WS
 Webs diferentes tecnologías consumen WS
-Solución de compromiso
-Sólo Pull, Tareas periódicas
-Arquitectura del core: BD + LDAP + Adaptadores + Traductores +  Bus + Publicar ops core como WS
-Adaptadores: BD, LDAP, WS, Comandos SSH, etc.
-Herramientas de despliegue espefícas: Rake
 -->
 
-<!-- arquitectura -->
+!SLIDE image
 
-<!-- del diseño inicial a la cruda realidad -->
-
-!SLIDE
-
-## Problem
-
-# Signup/signin on multiple services
-# Consolidate personal info
-
-!SLIDE
-
-## Solution
-
-# Orchestrate services through a Service Bus
-# Single sign on
-
-<!-- garabato de arquitectura de Federico: ideal vs real -->
+< arquitectura chapuxera xD >
+<!--
+Solución de compromiso
+Sólo Pull, Tareas periódicas
+Adaptadores: BD, LDAP, WS, Comandos SSH, etc.
+-->
 
 !SLIDE bullets
 
@@ -44,23 +50,32 @@ Herramientas de despliegue espefícas: Rake
 * Java stack
 * Ruby for automation
 
+<!--
+Herramientas de build y despliegue específicas: Rake
+-->
+
 !SLIDE
 
 # NeoSAI
 
-!SLIDE
+!SLIDE problem
 
-## Context
+# Context
 
-# Laboratory Management System
+## Laboratory Management System
 
-!SLIDE
+!SLIDE image
 
-## Problem
+< arquitectura de NeoSAI new >
 
-# Different kinds of UIs
 
-!SLIDE bullets
+!SLIDE problem
+
+# Problem
+
+## Different kinds of UIs
+
+!SLIDE solution bullets
 
 # Solution
 
@@ -68,13 +83,15 @@ Herramientas de despliegue espefícas: Rake
 * Advanced CRUD: JS components + AJAX
 * Complex tasks: Single-page app + REST
 
-!SLIDE
 
-## Problem
+!SLIDE problem
 
-# Integrate new & legacy app
+# Problem
 
-!SLIDE bullets
+## Integrate new & legacy app
+
+
+!SLIDE solution bullets
 
 # Solution
 
@@ -83,70 +100,127 @@ Herramientas de despliegue espefícas: Rake
 * SSO
 * UI integration via IFrame + HTML5 PubSub
 
-<!-- diagrama -->
+!SLIDE image
 
-!SLIDE
+< diagrama arq neosai, a nivel apps y frames >
 
-## Problem
+!SLIDE problem
 
-# Integrate "nonintegrable" third party software
+# Problem
 
-!SLIDE bullets
+## Integrate "nonintegrable" third party software
 
-# Solution
-
-* Ad hoc REST API
-
-<!-- diagrama -->
-
-!SLIDE
-
-## Problem
-
-# Mail log: different sources
-
-!SLIDE bullets
+!SLIDE solution
 
 # Solution
 
-* Wrapper + REST API
+## Ad hoc REST API
 
-<!-- diagrama -->
+!SLIDE image
 
-!SLIDE
+< diag testo WAMP mierda ad hoc cona >
 
-## Problem
+!SLIDE problem
 
-# Complex permission checks
+# Problem
 
-!SLIDE bullets
+## Mail log: different sources
 
-# Solution
-
-* Policy objects
-
-<!-- ejemplo de permiso loco -->
-
-!SLIDE
-
-## Problem
-
-# Run the same business logic from different places
-
-!SLIDE bullets
+!SLIDE solution
 
 # Solution
 
-* Context objects
-* Runnable from controllers, console, APIs, cron jobs
+## Wrapper + REST API
+
+< diagrama >
+<!--
+  ventaja, no tenemos que tocar las aplicaciones, SRP
+  desventaja, rendimiento
+-->
+
+!SLIDE problem
+
+# Problem
+
+## Complex permission checks
+
+!SLIDE solution
+
+# Solution
+
+## Policy objects
 
 !SLIDE
 
-## Problem
+# Can change a report if I am the author or its author is one of my subordinates and the report has not been signed
 
-# Run business logic as different users, even as no user
+!SLIDE code
 
-!SLIDE bullets
+    @@@ ruby
+
+    class ReportsController
+      def edit
+        report = Report.find(params[:id])
+        can_edit = ReportEditorPolicy.
+          new(current_user, report).comply?
+        ...
+
+!SLIDE code
+
+    @@@ ruby
+    class ReportEditorPolicy < Policy
+      def initialize(user, report)
+        ...
+      end
+
+      def comply?
+        (owner_of_report? or
+        subordinate_report?) and
+        unsigned_report?
+      end
+
+      ...
+
+
+!SLIDE problem
+
+# Problem
+
+## Run the same business logic from different places
+
+!SLIDE solution
+
+# Solution
+
+## Context objects
+## Runnable from controllers, console, APIs, cron jobs
+
+!SLIDE code
+
+    @@@ ruby
+    class CreateUserContext
+      def initialize(user_params, notifier)
+        ...
+      end
+
+      def run
+        user = User.new(user_params)
+        if user.save
+          notifier.send(:new_user, user)
+        end
+      end
+    end
+
+
+
+
+!SLIDE problem
+
+# Problem
+
+## Run business logic as different users, even as no user
+
+!SLIDE solution bullets
 
 # Solution
 
@@ -154,17 +228,18 @@ Herramientas de despliegue espefícas: Rake
 * Runnable as user
 * NullUser (NullObject pattern)
 
-<script>
-User = function(name) {
-  this.name = name;
-}
+!SLIDE bullets
 
-greet = function(user) {
-  alert('Hi ' + user.name + '!');
-}
-</script>
+# NullObject pattern
 
-!SLIDE execute
+* Remove branching logic
+* Avoid null errors
+* Improves testability
+
+<!-- No ramas -> menos tests -> SRP -->
+
+
+!SLIDE code
 
     @@@ coffeescript
     class User
@@ -172,52 +247,115 @@ greet = function(user) {
         this.name = name
 
     greet = (user) ->
-      alert "Hi #{user.name}!"
+      if user
+        alert "Hi #{user.name}!"
+      else
+        alert "Hi stranger!"
 
+!SLIDE code
+
+    @@@ coffeescript
     john = new User('John')
+    keith = null
 
-    greet john
+    greet john    # Hi John!
+    greet keith   # Hi stranger!
 
-!SLIDE execute
+!SLIDE code
 
     @@@ coffeescript
     class Stranger extends User
       constructor : ->
         this.name = 'stranger'
 
-    stranger = new Stranger
+    greet = (user) ->
+      alert "Hi #{user.name}!"
 
-    greet stranger
+    greet john    # Hi John!
+    greet keith   # Hi stranger!
 
-!SLIDE
+!SLIDE problem
 
-## Problem
+# Problem
 
-# Limit data access based on user roles
+## Limit data access based on user roles
 
-!SLIDE bullets
+!SLIDE solution bullets
 
 # Solution
 
 * Inject user with model access methods
 * Model access implementation based on role
+* Similar to State pattern (sort of)
 
-<!-- Best with diagram -->
+!SLIDE image
+
+< Diagrama de inyeccción en base al rol. Chain of resposibility >
 
 
 !SLIDE
-# AQUI LO DEL DCI!!!
+# DCI
 
+## Data, Context, Interaction
+
+<!--
 Llegamos a la arquitectura a través de mirar el DCI
 explicar el DCI con ejemplo de transferencia entre cuentas (con diag)
+No lo usamos tal cual por limitaciones tecnológicas.
+-->
 
-* No lo usamos tal cual por limitaciones tecnológicas.
+!SLIDE code
 
-!SLIDE
-## Problem
-# Present same model object in different ways on different views
+    @@@ ruby
+    class BankAccount
+      attr_accessor :balance
+    end
+
+    module TransferSource
+      def withdraw(amount)
+        self.balance -= amount
+      end
+    end
+
+    module TransferTarget
+      def deposit(amount)
+        self.balance += amount
+      end
+    end
+
+!SLIDE code
+
+    @@@ ruby
+    class TransferContext
+      def initialize(source, target, amount)
+        ...
+      end
+
+      def run
+        source.extends(TransferSource)
+        target.extends(TransferTarget)
+
+        source.withdraw(amount)
+        target.deposit(amount)
+      end
+    end
 
 !SLIDE bullets
+
+# DCI
+
+* SRP
+* Reusability
+* Testability
+* Best with dynamic langs
+* Beware of implementation quirks
+
+
+!SLIDE problem
+# Problem
+## Present same model object in different ways on different views
+
+!SLIDE solution bullets
 # Solution
 
 * Decorator pattern
@@ -225,7 +363,65 @@ explicar el DCI con ejemplo de transferencia entre cuentas (con diag)
 * One or multiple decorators
 * Variant: presenter pattern
 
-<!--
-Buscador: externo -> Indexador
-Tareas en segundo plano
--->
+!SLIDE code
+
+    @@@ ruby
+    class User
+      def initialize(name, email)
+        ...
+      end
+    end
+
+    class UserDecorator
+      def initialize(user)
+        ...
+      end
+
+      def name
+        user.name
+      end
+
+      def email
+        user.name + "<" + user.email + ">"
+      end
+    end
+
+!SLIDE code
+
+    @@@ ruby
+    user = User.new('john', 'john@gmail.com')
+    decorated_user = UserDecorator.new(user)
+    mail = new Mail()
+
+    mail.send to: decorated_user.email
+
+!SLIDE problem
+
+# Problem
+## Global search
+
+!SLIDE solution
+
+# Solution
+## External Indexer (REST API)
+
+!SLIDE image
+
+< diagrama app lucene api rest >
+
+
+!SLIDE problem
+
+# Problem
+## Long running contexts
+
+!SLIDE solution
+
+# Solution
+## Execute contexts in background
+## Jobs queues
+## Jobs executor
+
+!SLIDE image
+
+< diagrama de colas más mierda >

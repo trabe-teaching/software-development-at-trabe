@@ -1,3 +1,7 @@
+!SLIDE section
+
+# Methodology
+
 !SLIDE
 
 # The Trábico process
@@ -20,39 +24,65 @@
 
 # Project development
 
-* Kanban + Scrum
+* Kanban + Scrum (sort of)
 * Continuous vs Scheduled delivery
 * TDD
 * Code reviews
 * Pair programming
 
-!SLIDE
+!SLIDE content
 
-<!-- capturas herramientas -->
+# Tools
 
-<!-- trello + intranet, bitbucket -->
+!SLIDE image
 
-!SLIDE
+# < trello >
 
-Wiki + sripts + automation + bootstrap
+!SLIDE image
 
-!SLIDE
-## TESTs, TESTs, TESTs
+# < captura de git lol >
 
-<!-- Tests guiados por mocks, llevan al buen diseño -->
+!SLIDE image
 
-!SLIDE 
-## TESTs, TESTs, TESTs
+# < bitbucket page con README >
 
-# Automatic test run, mocking libraries, metrics
+!SLIDE image
 
-<!-- 
+# < bitbucket pull request >
+
+!SLIDE image
+
+# < confluence >
+
+!SLIDE bullets
+
+* scripts
+* automation
+* bootstrap
+
+!SLIDE bullets
+# TESTs, TESTs, TESTs
+
+* Automatic run
+* Mocking
+* Metrics (Coverage)
+
+<!-- Tests guiados por mocks, llevan al buen diseño
   Mock, Factorias, Mock de 3rd parties, coverage
   Deberíamos tener CI  (-_- U)
 -->
 
 !SLIDE bullets
-## Conveniences
+# Conveniences
 
 * Live Reload. YAY!
 * Transpilers: CoffeScript, SASS, etc.
+* Debugging tool
+
+<!--
+  En función de la tecnología usamos herramientas
+-->
+
+!SLIDE image
+
+< Chrome developer tools >
