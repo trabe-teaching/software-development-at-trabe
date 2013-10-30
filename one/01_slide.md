@@ -1,6 +1,6 @@
 !SLIDE
 
-# Máster EI - DSI
+# Software Development at Trabe
 
 !SLIDE image
 
