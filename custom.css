@@ -1,28 +1,53 @@
 /* -- Fonts --- */
-@font-face { font-family: "Yanone";  src: url("Yanone-Kaffeesatz-regular.ttf")    format("truetype"); }
+@font-face { font-family: "Yanone"; src: url("Yanone-Kaffeesatz-regular.ttf")  format("truetype"); }
+@font-face { font-family: "Menlo";  src: url("Menlo-Powerline.otf")            format("opentype"); }
 
 #footer {
   display: none;
 }
 
 .slide {
-  background: #fff url('fondo.jpg') no-repeat top left;
-  padding: 0 50px;
-  width: 924px;
+  padding: 0;
 }
 
 .content {
-  background: none;
+  height: 768px !important;
+  width: 1024px !important;
+  background: #fff url('bg_slide.jpg') no-repeat top left;
+  padding: 0 50px;
+  display: table-cell;
   font-family: 'Yanone' !important;
   color: rgb(83, 71, 71);
+  text-align: center;
+  vertical-align: middle;
 }
 
 h1 {
+  margin-top: 0;
   padding: 0 50px;
   line-height: 1.15em;
 }
 
+.content.cover {
+  color: #fff;
+  background-image: url('bg_cover.jpg')
+}
+
+.content.section,
+.content.toc {
+  color: #fff;
+  background-image: url('bg_section.jpg')
+}
+
+.content.toc h1 {
+  font-size: 50px !important;
+}
+.content.toc li {
+  font-size: 70px !important;
+}
+
 .content.image {
+  padding: 0;
   background: #fff;
 }
 
@@ -37,21 +62,48 @@ h1 {
   margin: auto auto;
 }
 
+.content.quote {
+  position: relative;
+}
+
+.content.quote:before {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  content: "\201C";
+  font-size: 500px;
+  opacity: 0.1;
+  font-family: Helvetica;
+}
+
+.content.quote h1 {
+  text-align: left;
+}
+
+.content.quote h2 {
+  text-align: right;
+}
+
+
+.content.bullets h1 {
+  font-size: 70px;
+}
+
 .content.bullets li {
   line-height: 1.15em;
   margin-left: 0;
+  font-size: 70px;
 }
 
-.btn-demo {
-  font-size: 4rem;
-  font-family: 'Yanone';
-  padding: 20px;
+.content.bullets-first h1 {
+  font-size: 70px;
 }
 
-.btn-demo:hover {
-  color: #fff;
-  background-color: #000;
+.content.bullets-first li {
+  font-size: 90px;
 }
+
+
 
 .columns ul {
   margin: 0 auto;
@@ -59,6 +111,21 @@ h1 {
   -webkit-column-count: 2;
 }
 
-.sh_sourceCode {
+.content.code,
+pre.sh_sourceCode {
+  text-align: left;
   background: #f5f4f0 ! important;
+}
+
+code,
+pre.sh_sourceCode .sh_string {
+  font-family: 'Menlo' !important;
+}
+
+pre.sh_sourceCode .sh_keyword {
+  font-weight: normal;
+}
+
+.content.smallest pre.sh_sourceCode {
+  font-size: 28px;
 }
