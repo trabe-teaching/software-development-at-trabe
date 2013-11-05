@@ -103,7 +103,17 @@ h1 {
   font-size: 90px;
 }
 
+.content.title-first h1 {
+  font-size: 90px;
+}
 
+.content.title-first li {
+  font-size: 70px;
+}
+
+.content.many-bullets li {
+  padding-bottom: 0;
+}
 
 .columns ul {
   margin: 0 auto;
@@ -129,3 +139,14 @@ pre.sh_sourceCode .sh_keyword {
 .content.smallest pre.sh_sourceCode {
   font-size: 28px;
 }
+
+.content.terminal {
+  background: #000 !important;
+  color: #1f1 !important;
+}
+
+.content.terminal pre {
+  line-height: 200%;
+}
+
+

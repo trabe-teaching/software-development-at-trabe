@@ -8,7 +8,7 @@
 
 ## Agile, sort of : )
 
-!SLIDE bullets
+!SLIDE bullets bullets-first
 
 # Project management
 
@@ -16,11 +16,11 @@
 * Kanban
 * Postmortem
 
-!SLIDE
+!SLIDE image
 
-<!-- foto tablón -->
+![Trabeboard](trabeboard.png)
 
-!SLIDE bullets
+!SLIDE bullets many-bullets title-first
 
 # Project development
 
@@ -30,59 +30,102 @@
 * Code reviews
 * Pair programming
 
-!SLIDE content
+!SLIDE section
 
 # Tools
 
 !SLIDE image
 
-# < trello >
+![Trello](trello.png)
 
 !SLIDE image
 
-# < captura de git lol >
+![Git](git_lol.png)
 
 !SLIDE image
 
-# < bitbucket page con README >
+![Bitbucket README](bitbucket_readme.png)
 
 !SLIDE image
 
-# < bitbucket pull request >
+![Bitbucket Pull Request](bitbucket_pull_request.png)
 
 !SLIDE image
 
-# < confluence >
+![Bitbucket Pull Request Diff](bitbucket_pull_request_code.png)
 
-!SLIDE bullets
+<!--
+  Diffs y comentarios permiten code reviews asíncronas y remotas
+-->
 
-* scripts
+!SLIDE image
+
+![Confluence](confluence.png)
+
+<!--
+  Compartir conocimiento. Preferir que el conocimiento específico 
+  esté como parte del README del proyecto o similar.
+-->
+
+!SLIDE bullets bullets-first
+
+* conventions
 * automation
+* scripts
 * bootstrap
 
-!SLIDE bullets
+<!--
+  Enforcing de convenciones de código comunes, etc. Entornos parecidos, herramientas y plugins comunes. .dotfiles en github
+  Automatización de todo lo posible, setup, despliegue, tareas de mantenimiento
+  Hacemos scripts. -> Repositorio de scripts compartido
+  Facilitar el bootstrap del proyecto: README + script setup
+-->
+
+!SLIDE code small terminal
+
+    @@@
+    $ git clone trabe:awesome-client
+    $ cd trabe:awesome-client
+    $ ./bin/setup
+
+
+!SLIDE bullets title-first
 # TESTs, TESTs, TESTs
 
-* Automatic run
+* Automatic run (guard)
 * Mocking
-* Metrics (Coverage)
+* Metrics (coverage)
 
-<!-- Tests guiados por mocks, llevan al buen diseño
+<!--
+  Tests guiados por mocks, llevan al buen diseño
   Mock, Factorias, Mock de 3rd parties, coverage
+  ¿¿Mockists vs State-ist??
   Deberíamos tener CI  (-_- U)
 -->
 
-!SLIDE bullets
+!SLIDE bullets title-first
 # Conveniences
 
-* Live Reload. YAY!
 * Transpilers: CoffeScript, SASS, etc.
-* Debugging tool
+* Debugging tools
+* Live Reload. YAY!
 
 <!--
-  En función de la tecnología usamos herramientas
+  En función de la tecnología usamos herramientaa
+  transpilers: escritura eficiente. Ojo al debug
+  debugging: herramientas potentes como pry, etc,
+
 -->
 
 !SLIDE image
 
-< Chrome developer tools >
+![Chrome tools](chrome_tools_dom.png)
+
+!SLIDE image
+
+![Chrome tools](chrome_tools_debugger.png)
+
+!SLIDE image
+
+![Chrome tools](chrome_tools_network.png)
+
