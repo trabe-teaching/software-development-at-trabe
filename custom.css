@@ -96,7 +96,7 @@ h1 {
 }
 
 .content.bullets-first h1 {
-  font-size: 70px;
+  font-size: 60px;
 }
 
 .content.bullets-first li {
@@ -108,7 +108,7 @@ h1 {
 }
 
 .content.title-first li {
-  font-size: 70px;
+  font-size: 60px;
 }
 
 .content.many-bullets li {
@@ -132,6 +132,7 @@ pre.sh_sourceCode .sh_string {
   font-family: 'Menlo' !important;
 }
 
+pre.sh_sourceCode .sh_function,
 pre.sh_sourceCode .sh_keyword {
   font-weight: normal;
 }
@@ -149,4 +150,15 @@ pre.sh_sourceCode .sh_keyword {
   line-height: 200%;
 }
 
+.content.problem h1,
+.content.solution h1 {
+  font-size: 60px;
+  opacity: 0.7;
+}
+
+.content.problem h2,
+.content.solution h2,
+.content.solution li {
+  font-size: 75px !important;
+}
 

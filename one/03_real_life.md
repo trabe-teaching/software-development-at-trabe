@@ -2,7 +2,7 @@
 
 # Real life examples
 
-!SLIDE
+!SLIDE section
 
 # FEDERICO
 
@@ -21,7 +21,7 @@ Ejemplo de arquitectura para integrar múltiples aplicaciones
 
 # Solution
 
-## Orchestrate services through a Service Bus
+## Orchestrate services (Service Bus)
 ## Single Sign On
 
 !SLIDE image
@@ -43,7 +43,7 @@ Sólo Pull, Tareas periódicas
 Adaptadores: BD, LDAP, WS, Comandos SSH, etc.
 -->
 
-!SLIDE bullets
+!SLIDE bullets bullets-first
 
 # Technology
 
@@ -54,7 +54,7 @@ Adaptadores: BD, LDAP, WS, Comandos SSH, etc.
 Herramientas de build y despliegue específicas: Rake
 -->
 
-!SLIDE
+!SLIDE section
 
 # NeoSAI
 
@@ -132,7 +132,10 @@ Herramientas de build y despliegue específicas: Rake
 
 ## Wrapper + REST API
 
+!SLIDE image
+
 < diagrama >
+
 <!--
   ventaja, no tenemos que tocar las aplicaciones, SRP
   desventaja, rendimiento
@@ -150,11 +153,12 @@ Herramientas de build y despliegue específicas: Rake
 
 ## Policy objects
 
-!SLIDE
+!SLIDE quote
 
 # Can change a report if I am the author or its author is one of my subordinates and the report has not been signed
+## the customer
 
-!SLIDE code
+!SLIDE code small
 
     @@@ ruby
 
@@ -165,7 +169,7 @@ Herramientas de build y despliegue específicas: Rake
           new(current_user, report).comply?
         ...
 
-!SLIDE code
+!SLIDE code small
 
     @@@ ruby
     class ReportEditorPolicy < Policy
@@ -195,7 +199,7 @@ Herramientas de build y despliegue específicas: Rake
 ## Context objects
 ## Runnable from controllers, console, APIs, cron jobs
 
-!SLIDE code
+!SLIDE code small
 
     @@@ ruby
     class CreateUserContext
@@ -228,7 +232,7 @@ Herramientas de build y despliegue específicas: Rake
 * Runnable as user
 * NullUser (NullObject pattern)
 
-!SLIDE bullets
+!SLIDE bullets title-first
 
 # NullObject pattern
 
@@ -239,7 +243,7 @@ Herramientas de build y despliegue específicas: Rake
 <!-- No ramas -> menos tests -> SRP -->
 
 
-!SLIDE code
+!SLIDE code small
 
     @@@ coffeescript
     class User
@@ -252,24 +256,28 @@ Herramientas de build y despliegue específicas: Rake
       else
         alert "Hi stranger!"
 
-!SLIDE code
-
-    @@@ coffeescript
     john = new User('John')
     keith = null
 
     greet john    # Hi John!
     greet keith   # Hi stranger!
 
-!SLIDE code
+!SLIDE code small
 
     @@@ coffeescript
+    class User
+      constructor : (name) ->
+        this.name = name
+
     class Stranger extends User
       constructor : ->
-        this.name = 'stranger'
+        super 'stranger'
 
     greet = (user) ->
       alert "Hi #{user.name}!"
+
+    john = new User('John')
+    keith = new Stranger()
 
     greet john    # Hi John!
     greet keith   # Hi stranger!
@@ -304,7 +312,7 @@ explicar el DCI con ejemplo de transferencia entre cuentas (con diag)
 No lo usamos tal cual por limitaciones tecnológicas.
 -->
 
-!SLIDE code
+!SLIDE code small
 
     @@@ ruby
     class BankAccount
@@ -323,7 +331,7 @@ No lo usamos tal cual por limitaciones tecnológicas.
       end
     end
 
-!SLIDE code
+!SLIDE code small
 
     @@@ ruby
     class TransferContext
@@ -332,15 +340,15 @@ No lo usamos tal cual por limitaciones tecnológicas.
       end
 
       def run
-        source.extends(TransferSource)
-        target.extends(TransferTarget)
+        source.extends TransferSoure
+        target.extends TransferTarget
 
-        source.withdraw(amount)
-        target.deposit(amount)
+        source.withdraw amount
+        target.deposit amount
       end
     end
 
-!SLIDE bullets
+!SLIDE bullets title-first many-bullets
 
 # DCI
 
@@ -363,7 +371,7 @@ No lo usamos tal cual por limitaciones tecnológicas.
 * One or multiple decorators
 * Variant: presenter pattern
 
-!SLIDE code
+!SLIDE code smallest
 
     @@@ ruby
     class User
@@ -386,10 +394,10 @@ No lo usamos tal cual por limitaciones tecnológicas.
       end
     end
 
-!SLIDE code
+!SLIDE code small
 
     @@@ ruby
-    user = User.new('john', 'john@gmail.com')
+    user = User.new('john', 'john@mail.com')
     decorated_user = UserDecorator.new(user)
     mail = new Mail()
 
