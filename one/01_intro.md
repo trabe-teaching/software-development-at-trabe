@@ -112,3 +112,15 @@
 !SLIDE image
 
 ![Y U NO admin.ShowConfiguration](yu_no_admin_showconfiguration.png)
+
+
+!SLIDE bullets columns title-first
+
+# TEST, TEST, TEST
+
+* TDD, BDD
+* Regresions
+* Benchmarks
+* DI
+* Refactoring
+* CI

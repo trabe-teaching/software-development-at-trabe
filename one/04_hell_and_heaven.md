@@ -15,7 +15,7 @@
 
 ## LRU Caches + Auto expiring keys
 
-!SLIDE code
+!SLIDE code small
 
       @@@ ruby
 
@@ -37,6 +37,10 @@
 # Easy naming
 
 ## There is no easy naming. Sorry folks!
+
+!SLIDE image
+
+![Yao Ming](yao.png)
 
 !SLIDE
 
