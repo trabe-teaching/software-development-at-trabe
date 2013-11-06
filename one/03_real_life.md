@@ -31,7 +31,7 @@ Ejemplo de arquitectura para integrar múltiples aplicaciones
 <!--
 Solución ideal:
 Federacion de autenticacion
-Bus + Adaptadores + Pull+Push + Operaciones WS
+Bus + Pull+Push + Operaciones WS
 Webs diferentes tecnologías consumen WS
 -->
 
@@ -41,8 +41,10 @@ Webs diferentes tecnologías consumen WS
 
 <!--
 Solución de compromiso
-Sólo Pull, Tareas periódicas
+Sólo Pull, Tareas periódicas para push
 Adaptadores: BD, LDAP, WS, Comandos SSH, etc.
+
+RObot de keystroke xDDDD :p
 -->
 
 !SLIDE bullets bullets-first
@@ -109,6 +111,10 @@ Herramientas de build y despliegue específicas: Rake
 !SLIDE image
 
 ![SAI Integration](sai_integration.jpg)
+
+<!--
+  Ojo al consumo bidireccional de APIses
+-->
 
 !SLIDE problem
 
@@ -251,7 +257,7 @@ Herramientas de build y despliegue específicas: Rake
 <!-- No ramas -> menos tests -> SRP -->
 
 
-!SLIDE code small
+!SLIDE code smallest
 
     @@@ coffeescript
     class User
@@ -270,7 +276,7 @@ Herramientas de build y despliegue específicas: Rake
     greet john    # Hi John!
     greet keith   # Hi stranger!
 
-!SLIDE code small
+!SLIDE code smallest
 
     @@@ coffeescript
     class User
@@ -300,8 +306,7 @@ Herramientas de build y despliegue específicas: Rake
 
 # Solution
 
-* Inject user with model access methods
-* Model access implementation based on role
+* Inject user with role dependent methods to access the model
 * Similar to State pattern (sort of)
 
 !SLIDE image
@@ -379,6 +384,10 @@ No lo usamos tal cual por limitaciones tecnológicas.
 * One or multiple decorators
 * Variant: presenter pattern
 
+<!--
+  Recomentar as needed lo de los serializadores :D
+-->
+
 !SLIDE code smallest
 
     @@@ ruby
@@ -424,7 +433,6 @@ No lo usamos tal cual por limitaciones tecnológicas.
 !SLIDE image
 
 ![Indexer](indexer.jpg)
-
 
 <!--
   Ventaja: transparencia, independencia de BD

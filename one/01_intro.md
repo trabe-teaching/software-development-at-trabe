@@ -77,6 +77,29 @@
 
 ## KISS & DRY driven
 
+<!--
+
+son de OO pero aplicables a otro tipo de paradigmas
+
+
+Single responsibility principle
+  a class should have only a single responsibility.
+
+Open/closed principle
+  “software entities … should be open for extension, but closed for modification”.
+
+Liskov substitution principle
+  “objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program”. See also design by contract.
+
+Interface segregation principle
+  “many client-specific interfaces are better than one general-purpose interface.”[5]
+
+Dependency inversion principle
+  one should “Depend upon Abstractions. Do not depend upon concretions.”[5]
+  Dependency injection is one method of following this principle.
+-->
+
+
 !SLIDE
 
 # S for SRP
@@ -90,6 +113,10 @@
 !SLIDE image
 
 ![Be OO, my friend](be_oo_my_friend.png)
+
+<!--
+  Sigue lo SOLID y encapuslación y todo esto en cualquier lenguaje/paradigma que te irá mejor :D
+-->
 
 !SLIDE bullets bullets-first
 
@@ -125,6 +152,12 @@
 * Refactoring
 * CI
 
+<!--
+  DI -> Dependency Injection
+  Test complicado <-> código mal diseñado
+  Test -> Definir el api desde el punto de vista del "cliente"
+  Statist vs Mockist (Mock what you own)
+-->
 
 !SLIDE image
 

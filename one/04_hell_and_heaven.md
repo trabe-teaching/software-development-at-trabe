@@ -181,15 +181,15 @@
 
 !SLIDE image
 
-< mierda de un proeycto en Chrome >
+![Bitbucket Ok](bit_ok.png)
 
 !SLIDE image
 
-< mierda proyecto en IE >
+![Bitbucket full](bit_bad.png)
 
 !SLIDE image
 
-< mierda en emulador de iphone >
+![Bitbucket Android](bit_android.png)
 
 
 !SLIDE section

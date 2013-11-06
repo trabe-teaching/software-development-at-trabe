@@ -20,6 +20,12 @@
 
 ![Trabeboard](trabeboard.png)
 
+<!--
+  Columnas, restricciones, calles
+  Indicadores: más proyectos en desarrollo de personal. Mala cosa.
+-->
+
+
 !SLIDE bullets many-bullets title-first
 
 # Project development
@@ -29,6 +35,11 @@
 * TDD
 * Code reviews
 * Pair programming
+
+<!--
+  Code review: presencial vs Bitbucket
+  Pair programming: problemas chungos, formación, cansancio y ganas de no hacer nada a solas xD
+-->
 
 !SLIDE section
 
@@ -89,8 +100,8 @@
 !SLIDE code small terminal
 
     @@@
-    $ git clone trabe:awesome-client
-    $ cd trabe:awesome-client
+    $ git clone trabe:awesome-project
+    $ cd trabe:awesome-project
     $ ./bin/setup
 
 
@@ -116,10 +127,9 @@
 * Live Reload. YAY!
 
 <!--
-  En función de la tecnología usamos herramientaa
+  En función de la tecnología usamos herramientas
   transpilers: escritura eficiente. Ojo al debug
-  debugging: herramientas potentes como pry, etc,
-
+  mezclar: ej. sprokets + SASS en J2EE
 -->
 
 !SLIDE image

@@ -143,6 +143,7 @@ strong {
 pre.sh_sourceCode {
   text-align: left;
   background: #f5f4f0 ! important;
+  line-height: 1.4em;
 }
 
 pre {
@@ -160,7 +161,9 @@ pre.sh_sourceCode .sh_keyword {
 
 .content.smallest pre.sh_sourceCode {
   font-size: 28px;
+  line-height: 1.2em;
 }
+
 
 .content.terminal {
   background: #000 !important;
