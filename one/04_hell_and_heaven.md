@@ -64,22 +64,53 @@
 
 # Timezones, i18n, l11n, Accessibility hell
 
-## Always use UTC __:D__
+## Always use UTC (beware of qwirks) __:D__
 ## Treat i18n, l11n and accesibility as first class citizens
 
-<!-- Ejemplo del correo de los cojones de los SAI -->
-<!-- Ejemplo de timestamps, UTC, queries datetime vs time  -->
+!SLIDE image
+
+![Mail WAT](mail_wat.png)
+
+<!--
+  Ejemplo de cosa incontrolable
+-->
+
+!SLIDE code smallest
+
+      @@@ ruby
+
+      # DB stores UTC. Conversion done by Rails
+      r = Report.first
+      r.created_at # => 2013-11-06 00:00:00 +0100
+      r.created_at.utc # => 2013-11-05 23:00:00 UTC
+
+      Report.where('DATE(created_at) = ?', 
+        r.created_at.to_date)
+
+      # Ooooopppps!
+      #
+      #  SELECT * FROM reports
+      #  WHERE (DATE(created_at) = '2013-11-06')
+
+<!--
+  Ejemplo de cosa controlable
+-->
 
 !SLIDE
 
-# Deployment and environments hell
+# A test should have<br/>detected the defect __;)__
+
+
+!SLIDE
+
+# Deployment and<br/>environments hell
 
 ## Define enviroments from square one
 ## Automatize deployment as much as you can
 
 !SLIDE image
 
-< despliegue con mina gif animado :D >
+![Mina deploy](mina.gif)
 
 !SLIDE
 
@@ -91,7 +122,7 @@
 ## Treat documentation as part of the code
 
 
-!SLIDE code smaller
+!SLIDE code smallest
 
     @@@ java
 
