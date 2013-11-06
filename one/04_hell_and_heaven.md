@@ -46,7 +46,9 @@
 
 # Maybe there are more hard things
 
-<!-- Mother of GOD -->
+!SLIDE image
+
+![Mother of God](mother_of_god.png)
 
 !SLIDE
 
@@ -62,9 +64,11 @@
 
 # Timezones, i18n, l11n, Accessibility hell
 
-## Always use UTC :D
+## Always use UTC __:D__
 ## Treat i18n, l11n and accesibility as first class citizens
 
+<!-- Ejemplo del correo de los cojones de los SAI -->
+<!-- Ejemplo de timestamps, UTC, queries datetime vs time  -->
 
 !SLIDE
 
@@ -125,7 +129,8 @@
 
 !SLIDE
 
-# Or use a library! Or switch to erlang :P
+# Or use a library!
+# Or switch to erlang :P
 
 
 !SLIDE
@@ -162,29 +167,50 @@
 ## Parting note
 
 
-!SLIDE
+!SLIDE bullets title-first chain-bullets
 # SOLID (SRP in particular)
 
-## SOLID &#x2192; Simple &#x2192; Easy to change &#x2192; Happiness
+* &#x2193;
+* Simple
+* &#x2193;
+* Easy to change
+* &#x2193;
+* Happiness __\\(^o^)/__
 
-!SLIDE
-# YAGNI 
+!SLIDE bullets title-first chain-bullets
+# YAGNI
 
-## YAGNI &#x2192; Simple &#x2192; Easy to change &#x2192; Happiness
+* &#x2193;
+* Simple
+* &#x2193;
+* Easy to change
+* &#x2193;
+* Happiness __\\(^o^)/__
 
-!SLIDE
+!SLIDE bullets title-first chain-bullets
 
 # TESTs, TESTs, TESTs
 
-## Test &#x2192; YAGNI + SOLID &#x2192; Simple &#x2192; Easy to change &#x2192; Happiness
+* &#x2193;
+* YAGNI + SOLID
+* &#x2193;
+* Simple
+* &#x2193;
+* Easy to change
+* &#x2193;
+* Happiness __\\(^o^)/__
 
-!SLIDE
+!SLIDE bullets title-first chain-bullets
 
 # Refactor, Refactor, Refactor
+##(code and tests)
 
-## Refactor code and tests
-## Refactoring &#x2192; Better code & tests &#x2192; ... &#x2192; Happiness
-
+* &#x2193;
+* Better code & tests
+* &#x2193;
+* ... 
+* &#x2193;
+* Happiness __\\(^o^)/__
 
 !SLIDE
 

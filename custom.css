@@ -115,6 +115,24 @@ h1 {
   padding-bottom: 0;
 }
 
+.content.chain-bullets h1,
+.content.chain-bullets h2 {
+  margin-bottom: 10px;
+}
+
+.content.chain-bullets li {
+  padding-bottom: 3px;
+  padding-top: 3px;
+  font-size: 50px;
+}
+
+strong {
+  font-family: 'Helvetica' !important;
+  font-weight: normal;
+  font-size: 90%;
+  padding-left: 10px;
+}
+
 .columns ul {
   margin: 0 auto;
   width: 70%;
@@ -127,6 +145,9 @@ pre.sh_sourceCode {
   background: #f5f4f0 ! important;
 }
 
+pre {
+  margin: 0;
+}
 code,
 pre.sh_sourceCode .sh_string {
   font-family: 'Menlo' !important;
@@ -161,4 +182,9 @@ pre.sh_sourceCode .sh_keyword {
 .content.solution li {
   font-size: 75px !important;
 }
+
+.content.solution.wide-bullets li {
+  font-size: 70px !important;
+}
+
 

@@ -6,7 +6,7 @@
 
 # The Trábico process
 
-## Agile, sort of : )
+## Agile, sort of __: )__
 
 !SLIDE bullets bullets-first
 
@@ -41,6 +41,11 @@
 !SLIDE image
 
 ![Git](git_lol.png)
+
+<!--
+  Hablar de gitflow vs githubflow
+-->
+
 
 !SLIDE image
 

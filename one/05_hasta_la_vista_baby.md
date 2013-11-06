@@ -1,15 +1,14 @@
-!SLIDE section
+!SLIDE image
 
-# Hasta la vista baby!
+![Hasta la vista baby](hasta_la_vista_baby.png)
 
-< Arnoldo >
-
-!SLIDE 
-
-# Questions?
-
-# Do your EOM projects at Trabe
+!SLIDE
 
 # Complementary reads
 ## http://bit.ly/18rMFkK
 
+!SLIDE
+# Do your EOM projects at Trabe
+
+!SLIDE
+# Questions?

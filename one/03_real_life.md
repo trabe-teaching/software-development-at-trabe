@@ -75,7 +75,7 @@ Herramientas de build y despliegue específicas: Rake
 
 ## Different kinds of UIs
 
-!SLIDE solution bullets
+!SLIDE solution bullets wide-bullets
 
 # Solution
 
@@ -91,14 +91,14 @@ Herramientas de build y despliegue específicas: Rake
 ## Integrate new & legacy app
 
 
-!SLIDE solution bullets
+!SLIDE solution bullets wide-bullets
 
 # Solution
 
 * Shared DB
 * REST APIs (JSON preferred)
 * SSO
-* UI integration via IFrame + HTML5 PubSub
+* UI integration via IFrame +<br/>HTML5 PubSub
 
 !SLIDE image
 
@@ -108,7 +108,7 @@ Herramientas de build y despliegue específicas: Rake
 
 # Problem
 
-## Integrate "nonintegrable" third party software
+## Integrate "nonintegrable"<br/> third party software
 
 !SLIDE solution
 
@@ -197,7 +197,7 @@ Herramientas de build y despliegue específicas: Rake
 # Solution
 
 ## Context objects
-## Runnable from controllers, console, APIs, cron jobs
+## Runnable from controllers,<br/>console, APIs, cron jobs
 
 !SLIDE code small
 

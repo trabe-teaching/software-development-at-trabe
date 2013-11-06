@@ -29,7 +29,7 @@
 * Ideas, Methodology & Tools
 * Real life examples
 * The many hells of Computer Science
-* The ten commandments
+* The "six" commandments
 
 !SLIDE section
 
@@ -124,3 +124,8 @@
 * DI
 * Refactoring
 * CI
+
+
+!SLIDE image
+
+![Every time god kills a kitten](god_kitten.png)
