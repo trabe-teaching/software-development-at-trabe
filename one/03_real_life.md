@@ -25,7 +25,8 @@ Ejemplo de arquitectura para integrar múltiples aplicaciones
 ## Single Sign On
 
 !SLIDE image
-< arquitectura ideal >
+
+![Federico ideal](federico_ideal.jpg)
 
 <!--
 Solución ideal:
@@ -36,7 +37,8 @@ Webs diferentes tecnologías consumen WS
 
 !SLIDE image
 
-< arquitectura chapuxera xD >
+![Federico full](federico_full.jpg)
+
 <!--
 Solución de compromiso
 Sólo Pull, Tareas periódicas
@@ -66,8 +68,12 @@ Herramientas de build y despliegue específicas: Rake
 
 !SLIDE image
 
-< arquitectura de NeoSAI new >
+![NeoSAI design](neosai_design.jpg)
 
+
+<!--
+  También hay serializadores: decoradores específicos :D
+-->
 
 !SLIDE problem
 
@@ -102,7 +108,7 @@ Herramientas de build y despliegue específicas: Rake
 
 !SLIDE image
 
-< diagrama arq neosai, a nivel apps y frames >
+![SAI Integration](sai_integration.jpg)
 
 !SLIDE problem
 
@@ -110,15 +116,16 @@ Herramientas de build y despliegue específicas: Rake
 
 ## Integrate "nonintegrable"<br/> third party software
 
-!SLIDE solution
+!SLIDE solution bullets
 
 # Solution
 
-## Ad hoc REST API
+* Ad hoc REST API
+* Mail vacuums
 
 !SLIDE image
 
-< diag testo WAMP mierda ad hoc cona >
+![testo_wamp](testo_wamp.jpg)
 
 !SLIDE problem
 
@@ -134,11 +141,12 @@ Herramientas de build y despliegue específicas: Rake
 
 !SLIDE image
 
-< diagrama >
+![Mail wrapper](mail_wrapper.jpg)
 
 <!--
   ventaja, no tenemos que tocar las aplicaciones, SRP
-  desventaja, rendimiento
+  desventaja, rendimiento, alternativa: interceptar el envío
+  desde la librería (dos intercepciones diferentes :c )
 -->
 
 !SLIDE problem
@@ -298,7 +306,7 @@ Herramientas de build y despliegue específicas: Rake
 
 !SLIDE image
 
-< Diagrama de inyeccción en base al rol. Chain of resposibility >
+![User roles](user_roles.jpg)
 
 
 !SLIDE
@@ -408,28 +416,40 @@ No lo usamos tal cual por limitaciones tecnológicas.
 # Problem
 ## Global search
 
-!SLIDE solution
+!SLIDE solution bullets
 
 # Solution
-## External Indexer (REST API)
+* External Indexer (REST API)
 
 !SLIDE image
 
-< diagrama app lucene api rest >
+![Indexer](indexer.jpg)
 
+
+<!--
+  Ventaja: transparencia, independencia de BD
+  Problema: transaccionalidad
+-->
 
 !SLIDE problem
 
 # Problem
 ## Long running contexts
 
-!SLIDE solution
+!SLIDE solution bullets
 
 # Solution
-## Execute contexts in background
-## Jobs queues
-## Jobs executor
+* Execute contexts in background
+* Jobs queues
+* Jobs executor
 
 !SLIDE image
 
-< diagrama de colas más mierda >
+![Background Jobs](bg_jobs.jpg)
+
+<!--
+  Escalabilidad
+  Linealizar tiempo de respuesta de la app
+  Problema: persistencia de jobs. Gestión de error/repetición.
+    Infraestructura para recupearar los resultados
+-->

@@ -5,7 +5,7 @@
 !SLIDE
 
 # Complementary reads
-## http://bit.ly/18rMFkK
+## http://ir.gl/trabe-reads
 
 !SLIDE
 # Do your EOM projects at Trabe

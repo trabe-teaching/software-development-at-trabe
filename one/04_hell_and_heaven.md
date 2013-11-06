@@ -150,7 +150,7 @@
 ## Use multi process
 ## Avoid too much low level
 
-!SLIDE bullets
+!SLIDE bullets bullets-first
 
 # Inter Process Communication
 
@@ -164,16 +164,16 @@
 # Or switch to erlang :P
 
 
-!SLIDE
+!SLIDE bullets title-first
 
 # Fragmentation hell
 
-## Do your HTML5/CSS3/JS homework
-## SOLID also applies (SMACSS, etc)
-## Know how to tame browsers
-## Know how to tame mobile
+* Do your HTML5/CSS3/JS homework
+* SOLID also applies (SMACSS, etc)
+* Know how to tame browsers
+* Know how to tame mobile
 
-!SLIDE 
+!SLIDE
 
 # MVC Inception
 
