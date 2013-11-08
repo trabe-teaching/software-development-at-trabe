@@ -101,7 +101,7 @@
 
     @@@
     $ git clone trabe:awesome-project
-    $ cd trabe:awesome-project
+    $ cd awesome-project
     $ ./bin/setup
 
 

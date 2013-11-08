@@ -58,12 +58,12 @@
 
 # Simple solutions are easier to:
 
+* grasp
 * design
 * code
+* document
 * mantain
 * evolve
-* document
-* grasp
 
 !SLIDE
 

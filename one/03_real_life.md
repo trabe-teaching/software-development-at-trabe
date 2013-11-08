@@ -17,12 +17,13 @@ Ejemplo de arquitectura para integrar múltiples aplicaciones
 ## Signup/signin on multiple services
 ## Consolidate personal info
 
-!SLIDE solution
+!SLIDE solution bullets bullets-first
 
 # Solution
 
-## Orchestrate services (Service Bus)
-## Single Sign On
+* Procedure repository
+* Orchestrate services (Service Bus)
+* Single Sign On
 
 !SLIDE image
 
@@ -161,16 +162,16 @@ Herramientas de build y despliegue específicas: Rake
 
 ## Complex permission checks
 
+!SLIDE quote
+
+# Can change a report if I am the author or its author is one of my subordinates and the report has not been signed
+## the customer
+
 !SLIDE solution
 
 # Solution
 
 ## Policy objects
-
-!SLIDE quote
-
-# Can change a report if I am the author or its author is one of my subordinates and the report has not been signed
-## the customer
 
 !SLIDE code small
 

@@ -60,13 +60,6 @@
 
 ![Encoding](encoding.png)
 
-!SLIDE
-
-# Timezones, i18n, l11n, Accessibility hell
-
-## Always use UTC (beware of qwirks) __:D__
-## Treat i18n, l11n and accesibility as first class citizens
-
 !SLIDE image
 
 ![Mail WAT](mail_wat.png)
@@ -74,6 +67,14 @@
 <!--
   Ejemplo de cosa incontrolable
 -->
+
+!SLIDE
+
+# Timezones, i18n, l11n, Accessibility hell
+
+## Always use UTC (beware of qwirks) __:D__
+## Treat i18n, l11n and accesibility as first class citizens
+
 
 !SLIDE code smallest
 
@@ -99,6 +100,28 @@
 !SLIDE
 
 # A test should have<br/>detected the defect __;)__
+
+!SLIDE
+
+# The money hell
+## Beware of spanish taxes and accounting
+## Use f**king cents
+
+!SLIDE
+
+# The money hell <br/>a.k.a the floating point hell
+## Stick to integers. Use fixed point
+
+<!--
+  Floats are fast in today CPUs an acceptable for
+  a lot of things (i.e. 3D graphics), but not for
+  money. For money you need 100% accurate numeric types
+-->
+
+!SLIDE image
+
+![Show me the money](show_me_the_money.jpg)
+
 
 
 !SLIDE
@@ -173,12 +196,6 @@
 * Know how to tame browsers
 * Know how to tame mobile
 
-!SLIDE
-
-# MVC Inception
-
-## Inside an webapp MVC there is another MVC
-
 !SLIDE image
 
 ![Bitbucket Ok](bit_ok.png)
@@ -190,6 +207,12 @@
 !SLIDE image
 
 ![Bitbucket Android](bit_android.png)
+
+!SLIDE
+
+# MVC Inception
+
+## Inside an webapp MVC there is another MVC
 
 
 !SLIDE section
@@ -251,8 +274,8 @@
 
 !SLIDE
 
-# The most important commandment
+## The most important commandment
 
-## Do what feels right!
+# Do what feels right!
 
 <!-- EJemplo de Twitter y ; -->
